@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.vendored_frameworks = 'ios_sdk/YiDunProtector-iOS-3.2.3/RiskPerception.framework'
+  s.vendored_frameworks = ['ios_sdk/YiDunProtector-iOS-3.2.3/RiskPerception.xcframework']
   s.frameworks  = 'AvFoundation', 'CoreTelephony', 'SystemConfiguration'
   s.libraries = 'c++'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -lc++ -fprofile-instr-generate -lz' }
