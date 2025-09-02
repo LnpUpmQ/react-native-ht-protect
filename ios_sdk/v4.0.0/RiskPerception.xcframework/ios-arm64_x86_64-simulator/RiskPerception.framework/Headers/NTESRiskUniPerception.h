@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AntiCheatResult.h"
+#import <RiskPerception/AntiCheatResult.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,7 +37,7 @@ typedef enum {
 
 typedef void (^GetTokenCallback)(AntiCheatResult *result);
 typedef void (^HTPCallback)(int code, NSString *msg, NSString *content);
-
+__attribute__((visibility("default")))
 @interface NTESRiskUniPerception : NSObject
 
 /**

@@ -6,114 +6,64 @@
 	<dict>
 		<key>Headers/AntiCheatResult.h</key>
 		<data>
-		nYEJ2WI9BYKj1jJbHsJwkoxe3Wc=
+		SYFbmyNlJT69CNpf97/QFkh3Ao4=
 		</data>
-		<key>Headers/NTESRiskPerceptionSwift.h</key>
+		<key>Headers/NTESRiskErrorCode.h</key>
 		<data>
-		EGopIUBQi6FZoMS7z+Nz0tlpd84=
+		Da2kWiIWSPxDf909LyqZ/3VZlg8=
 		</data>
 		<key>Headers/NTESRiskUniConfiguration.h</key>
 		<data>
-		RwYbfBENqkQk8oUGCftix66isLU=
+		JXgnbnHfl/qQUmnnm2XXqkD2bDk=
 		</data>
 		<key>Headers/NTESRiskUniPerception.h</key>
 		<data>
-		UMOS4RA/7QUIIvNvKxjecWyJsQI=
+		qfmWLUdxU5ywtKKk167A6xBfLlQ=
 		</data>
 		<key>Headers/NTESRiskUniUtil.h</key>
 		<data>
-		FwymUO/lVujNuQe/6wBuL5gZCRw=
+		6kcVjmOoFzTNn1BIypA+qK+P4uA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SoWpDVrGzHJjOiQGCNJBown+NRc=
-		</data>
-		<key>Modules/module.modulemap</key>
-		<data>
-		dMsydSNrqMg3TxoD6VcaVB2npDs=
-		</data>
-		<key>PrivacyInfo.xcprivacy</key>
-		<data>
-		geQ9XM+HO6K3C7EF0NuVJktUwco=
+		wWzCzz+CM4sHIUS0dbfj7P5zfFg=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/AntiCheatResult.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			nYEJ2WI9BYKj1jJbHsJwkoxe3Wc=
-			</data>
 			<key>hash2</key>
 			<data>
-			+AMd/jIkZ3GpZCMTTnDv81EgTy1uywf87jPJmCUs0R4=
+			A8yPyNiFZxFULWCYExe9p10G7yRc/JqAR6drRG1DkW8=
 			</data>
 		</dict>
-		<key>Headers/NTESRiskPerceptionSwift.h</key>
+		<key>Headers/NTESRiskErrorCode.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			EGopIUBQi6FZoMS7z+Nz0tlpd84=
-			</data>
 			<key>hash2</key>
 			<data>
-			+5KMxMrSOrvNixMWHPuFryiNDlpPQmAvu6Iywz8eRQ4=
+			8hjegM5KZ88tWknqQMkCEG/j8Kzno3WJL4P6Ozkz0Yw=
 			</data>
 		</dict>
 		<key>Headers/NTESRiskUniConfiguration.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			RwYbfBENqkQk8oUGCftix66isLU=
-			</data>
 			<key>hash2</key>
 			<data>
-			k78EcUVzfsQqWRsdtU/qqeh+9YIAb1ZwZuJLKZBFFR8=
+			F6D3nE8egD5KuwJ4YY/VzyiDPorZAdsTz1ILjrfVyT8=
 			</data>
 		</dict>
 		<key>Headers/NTESRiskUniPerception.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			UMOS4RA/7QUIIvNvKxjecWyJsQI=
-			</data>
 			<key>hash2</key>
 			<data>
-			LtAORZcIeHbxpJDTjLBtICGGmZNDZUiWQou7I/yIXvA=
+			xFsm2RDNN/ttbgqiIGgOl69TL4lyW5kiltXdWHjSz5Y=
 			</data>
 		</dict>
 		<key>Headers/NTESRiskUniUtil.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			FwymUO/lVujNuQe/6wBuL5gZCRw=
-			</data>
 			<key>hash2</key>
 			<data>
-			93lQ3ryA2WOmPznLeiduL4gzP6YgfQx9JxNh+R4Rr0w=
-			</data>
-		</dict>
-		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			dMsydSNrqMg3TxoD6VcaVB2npDs=
-			</data>
-			<key>hash2</key>
-			<data>
-			/cdP/yoQEEag9vz7qkEEereS7SIy8kUS4kSN3B2564E=
-			</data>
-		</dict>
-		<key>PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			geQ9XM+HO6K3C7EF0NuVJktUwco=
-			</data>
-			<key>hash2</key>
-			<data>
-			ZzgPS4LQOtkBR9Ned3trTBJgQQ2x+UrTOl069WogM04=
+			7Wx8ndHfj/UzU5+6pQTBDWY1yUmndGkSTbZBd9jQK80=
 			</data>
 		</dict>
 	</dict>
