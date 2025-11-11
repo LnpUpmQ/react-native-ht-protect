@@ -9,8 +9,26 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-__attribute__((visibility("default")))
+
 @interface NTESRiskUniUtil : NSObject
+
+/**
+ *  数据签名
+ *
+ *  @param dataString               需要签名的数据 data不能为空，若为空，返回nil
+ *
+ *  @return                 数据的签名值
+ */
++ (NSString *)getDataSign:(NSString *)dataString;
+
+/**
+ *  数据签名
+ *
+ *  @param data                             需要签名的数据 data不能为空，若为空，返回nil
+ *
+ *  @return                 数据的签名值
+ */
++ (NSString *)getDataSignWithData:(NSData *)data;
 
 /**
  *  白盒加密 V2 版本
@@ -92,8 +110,9 @@ __attribute__((visibility("default")))
 
 /**
  *  签名接口
- *  @param version                             签名版本
+ *
  *  @param alg                                 签名算法
+ *  @param version                             签名版本
  *  @param data                                需要签名的原文
  *  @param error                               错误信息
  *  @return                                    签名成功后的数据

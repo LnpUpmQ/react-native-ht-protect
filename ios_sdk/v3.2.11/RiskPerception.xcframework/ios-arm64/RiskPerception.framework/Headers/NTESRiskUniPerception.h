@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RiskPerception/AntiCheatResult.h>
+#import "AntiCheatResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,7 +37,12 @@ typedef enum {
 
 typedef void (^GetTokenCallback)(AntiCheatResult *result);
 typedef void (^HTPCallback)(int code, NSString *msg, NSString *content);
-__attribute__((visibility("default")))
+
+// 定义回调Block类型
+typedef void (^HTPCaptchaSuccessBlock)(NSString *result, NSString *validate, NSString *message);
+typedef void (^HTPCaptchaErrorBlock)(NSInteger code, NSString *message);
+typedef void (^HTPCaptchaCloseBlock)(NSString *message);
+
 @interface NTESRiskUniPerception : NSObject
 
 /**
@@ -134,6 +139,21 @@ __attribute__((visibility("default")))
  *
  */
 - (void)clearAllBlock;
+
+/**
+ * 验证码接口
+ *
+ * @param view  页面
+ * @param config 配置信息，由服务端check时提供
+ * @param onSuccessBlock 验证码成功时回调
+ * @param onErrorBlock 验证码错误时回调
+ * @param onCloseBlock 验证码关闭时回调
+ */
+- (void)showCaptcha:(nullable id)view
+             config:(NSString *)config
+     onSuccessBlock:(HTPCaptchaSuccessBlock)onSuccessBlock
+       onErrorBlock:(HTPCaptchaErrorBlock)onErrorBlock
+       onCloseBlock:(HTPCaptchaCloseBlock)onCloseBlock;
 @end
 
 NS_ASSUME_NONNULL_END

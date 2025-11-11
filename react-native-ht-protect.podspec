@@ -19,10 +19,10 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ['ios_sdk/v4.0.0/RiskPerception.xcframework']
+  s.vendored_frameworks = ['ios_sdk/v3.2.11/RiskPerception.xcframework']
   s.frameworks  = 'AvFoundation', 'CoreTelephony', 'SystemConfiguration'
   s.libraries = 'c++'
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -lc++ -fprofile-instr-generate -lz' }
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -fprofile-instr-generate -lz -framework AvFoundation -framework CoreTelephony -framework SystemConfiguration' }
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.
