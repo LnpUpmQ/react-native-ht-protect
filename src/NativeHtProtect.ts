@@ -5,7 +5,7 @@ export interface TConfig {
   gameKey: string | undefined;
   serverType: number | undefined;
   channel: string | undefined;
-  extraData: Record<string, string> | undefined;
+  extraData: { [k: string]: string } | undefined;
 }
 
 export interface TRoleInfo {
