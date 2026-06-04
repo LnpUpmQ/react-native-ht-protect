@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/LnpUpmQ/react-native-ht-protect/compare/v0.3.0...v0.3.2) (2026-06-04)
+
+
+### Bug Fixes
+
+* **android:** 修改getTokenAsync方法的timeout参数类型 ([818a5b9](https://github.com/LnpUpmQ/react-native-ht-protect/commit/818a5b93e29021e345dd47e607c73bbfa0187b96))
+* **NativeHtProtect:** 更新 extraData 类型定义 ([8ceedf1](https://github.com/LnpUpmQ/react-native-ht-protect/commit/8ceedf11c57c4bb6e01b16b9e6bac47cd9d7bc1e))
+
 ### [0.3.1](https://github.com/LnpUpmQ/react-native-ht-protect/compare/v0.3.0...v0.3.1) (2026-06-03)
 
 
