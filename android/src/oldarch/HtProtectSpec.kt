@@ -12,7 +12,7 @@ abstract class HtProtectSpec internal constructor(context: ReactApplicationConte
 
   abstract fun setRoleInfo(businessId: String, info: ReadableMap, promise: Promise)
 
-  abstract fun getTokenAsync(businessId: String, timeout: Int, promise: Promise)
+  abstract fun getTokenAsync(businessId: String, timeout: Double, promise: Promise)
 
 
 }

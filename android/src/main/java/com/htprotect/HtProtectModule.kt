@@ -106,7 +106,7 @@ class HtProtectModule internal constructor(context: ReactApplicationContext) :
 
 
   @ReactMethod
-  override fun getTokenAsync(businessId: String, timeout: Int, promise: Promise) {
+  override fun getTokenAsync(businessId: String, timeout: Double, promise: Promise) {
     try {
       val myGetTokenCallback = GetTokenCallback { antiCheatResult ->
         if (antiCheatResult.code == AntiCheatResult.OK) {
@@ -120,7 +120,7 @@ class HtProtectModule internal constructor(context: ReactApplicationContext) :
         }
       }
 
-      HTProtect.getTokenAsync(timeout, businessId, myGetTokenCallback)
+      HTProtect.getTokenAsync(timeout.toInt(), businessId, myGetTokenCallback)
     } catch (e: Error) {
       promise.reject("-1", Throwable("[HTProtect]: get token failed."));
     }
