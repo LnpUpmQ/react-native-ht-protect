@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/LnpUpmQ/react-native-ht-protect/compare/v0.3.0...v0.3.3) (2026-06-15)
+
+
+### Features
+
+* **htprotect:** 更新初始化回调和添加ioctl方法支持 ([aaa4092](https://github.com/LnpUpmQ/react-native-ht-protect/commit/aaa4092b3e36baf5a080214fab8cd11faa39ddfe))
+* **ios:** 更新风险感知SDK至3.4.5版本 ([01dc6f8](https://github.com/LnpUpmQ/react-native-ht-protect/commit/01dc6f86708239dcd6cdd5a8e0a1a5c2575abcab))
+
+
+### Bug Fixes
+
+* **android:** 修改getTokenAsync方法的timeout参数类型 ([c7734c4](https://github.com/LnpUpmQ/react-native-ht-protect/commit/c7734c4b71c489eb8b465d79b93a70f3fa760e3c))
+* **NativeHtProtect:** 更新 extraData 类型定义 ([8ceedf1](https://github.com/LnpUpmQ/react-native-ht-protect/commit/8ceedf11c57c4bb6e01b16b9e6bac47cd9d7bc1e))
+
 ### [0.3.2](https://github.com/LnpUpmQ/react-native-ht-protect/compare/v0.3.0...v0.3.2) (2026-06-04)
 
 
