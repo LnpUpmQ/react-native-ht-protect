@@ -117,7 +117,7 @@ dependencies {
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-  implementation 'com.github.LnpUpmQ:yidun-ht-protect-lib:5.6.9'
+  implementation 'com.github.LnpUpmQ:yidun-ht-protect-lib:5.7.9'
 }
 
 if (isNewArchitectureEnabled()) {
