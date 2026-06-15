@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ['ios_sdk/v3.2.11/RiskPerception.xcframework']
+  s.vendored_frameworks = ['ios_sdk/v3.4.5/RiskPerception.xcframework']
   s.frameworks  = 'AvFoundation', 'CoreTelephony', 'SystemConfiguration'
   s.libraries = 'c++'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -fprofile-instr-generate -lz -framework AvFoundation -framework CoreTelephony -framework SystemConfiguration' }

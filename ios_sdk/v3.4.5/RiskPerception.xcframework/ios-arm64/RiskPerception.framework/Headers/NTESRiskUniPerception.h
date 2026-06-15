@@ -12,27 +12,27 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum {
-    NTESRiskUniReportPlug = 0, // 外挂
-    NTESRiskUniReportStudio = 1 // 工作室
+	NTESRiskUniReportPlug = 0, // 外挂
+	NTESRiskUniReportStudio = 1 // 工作室
 
 } NTESRiskUniReportType;
 
 
 typedef enum {
-    // 签名信息
-    Cmd_GetSignInfo = 0,
-    // 越狱状态
-    Cmd_IsRootDevice = 2,
-    // SDK版本
-    Cmd_GetHTPVersion = 7,
-    // 获取超时数据
-    Cmd_GetCollectData = 8,
-    // 初始化配置内容，防止初始化失败情况下，客户可以通过服务端请求初始化配置并传递给SDK
-    Cmd_SetConfigData = 16,
-    // 客户服务端将check结果传递给SDK，便于执行后续动作
-    Cmd_SetResponseData = 17,
-    // 获取服务端设备指纹
-    Cmd_GetDeviceId = 20,
+	// 签名信息
+	Cmd_GetSignInfo = 0,
+	// 越狱状态
+	Cmd_IsRootDevice = 2,
+	// SDK版本
+	Cmd_GetHTPVersion = 7,
+	// 获取超时数据
+	Cmd_GetCollectData = 8,
+	// 初始化配置内容，防止初始化失败情况下，客户可以通过服务端请求初始化配置并传递给SDK
+	Cmd_SetConfigData = 16,
+	// 客户服务端将check结果传递给SDK，便于执行后续动作
+	Cmd_SetResponseData = 17,
+	// 获取服务端设备指纹
+	Cmd_GetDeviceId = 20,
 } RequestCmdID;
 
 typedef void (^GetTokenCallback)(AntiCheatResult *result);
@@ -43,6 +43,7 @@ typedef void (^HTPCaptchaSuccessBlock)(NSString *result, NSString *validate, NSS
 typedef void (^HTPCaptchaErrorBlock)(NSInteger code, NSString *message);
 typedef void (^HTPCaptchaCloseBlock)(NSString *message);
 
+__attribute__((visibility("default")))
 @interface NTESRiskUniPerception : NSObject
 
 /**
@@ -71,7 +72,18 @@ typedef void (^HTPCaptchaCloseBlock)(NSString *message);
  * @return                  获取到的token，用于校验是否有作弊行为
  */
 - (AntiCheatResult *)getToken:(NSString *)businessId
-                  withTimeout:(int)timeout;
+        withTimeout:(int)timeout;
+
+/**
+ *
+ * @param businessId               场景id
+ * @param timeout                  超时时间（范围：10000ms以内  单位:ms）
+ * @param useCache                是否使用本地缓存，默认优先使用有效期内缓存，NO时强制获取实时token
+ *
+ * @return                  获取到的token，用于校验是否有作弊行为
+ */
+- (AntiCheatResult *)getToken:(NSString *)businessId
+        withTimeout:(int)timeout useCache:(BOOL)useCache;
 
 /**
  * 获取Token，默认超时3s
@@ -81,8 +93,20 @@ typedef void (^HTPCaptchaCloseBlock)(NSString *message);
  * @param callback                      获取Token完成后回调
  */
 - (void)getTokenAsync:(NSString *)businessId
-          withTimeout:(int)timeout
-      completeHandler:(GetTokenCallback)callback;
+        withTimeout:(int)timeout
+        completeHandler:(GetTokenCallback)callback;
+
+/**
+ * 获取Token，默认超时3s
+ *
+ * @param businessId               场景id
+ * @param timeout                        超时时间（范围：10000ms以内  单位:ms）
+ * @param useCache                      是否使用本地缓存，默认优先使用有效期内缓存，NO时强制获取实时token
+ * @param callback                      获取Token完成后回调
+ */
+- (void)getTokenAsync:(NSString *)businessId
+        withTimeout:(int)timeout useCache:(BOOL)useCache
+        completeHandler:(GetTokenCallback)callback;
 
 /**
  *  设置用户角色信息,用户登录或者切换账号后请调用这个接口,在此之前确保已调用initWithAppId.(调用这个接口后，才会启动外挂保护功能)
@@ -98,12 +122,12 @@ typedef void (^HTPCaptchaCloseBlock)(NSString *message);
  *  @注意事项                          上述参数除businessId必填外，可根据实际情况进行传入，所填信息需要能够定位到当前登陆玩家
  */
 - (int)setRoleInfo:(NSString *)businessId
-             roleId:(NSString *)roleId
-           roleName:(NSString *)roleName
+        roleId:(NSString *)roleId
+        roleName:(NSString *)roleName
         roleAccount:(NSString *)roleAccount
-         roleServer:(NSString *)roleServer
-           serverId:(int)serverId
-           gameJson:(NSString *)gameJson;
+        roleServer:(NSString *)roleServer
+        serverId:(int)serverId
+        gameJson:(NSString *)gameJson;
 
 /**
  *  退出登陆
@@ -150,10 +174,10 @@ typedef void (^HTPCaptchaCloseBlock)(NSString *message);
  * @param onCloseBlock 验证码关闭时回调
  */
 - (void)showCaptcha:(nullable id)view
-             config:(NSString *)config
-     onSuccessBlock:(HTPCaptchaSuccessBlock)onSuccessBlock
-       onErrorBlock:(HTPCaptchaErrorBlock)onErrorBlock
-       onCloseBlock:(HTPCaptchaCloseBlock)onCloseBlock;
+        config:(NSString *)config
+        onSuccessBlock:(HTPCaptchaSuccessBlock)onSuccessBlock
+        onErrorBlock:(HTPCaptchaErrorBlock)onErrorBlock
+        onCloseBlock:(HTPCaptchaCloseBlock)onCloseBlock;
 @end
 
 NS_ASSUME_NONNULL_END
