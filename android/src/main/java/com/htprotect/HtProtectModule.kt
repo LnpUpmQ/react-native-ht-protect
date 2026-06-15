@@ -1,6 +1,7 @@
 package com.htprotect
 
 import android.util.Log
+import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
@@ -53,15 +54,10 @@ class HtProtectModule internal constructor(context: ReactApplicationContext) :
 
       val callback = HTPCallback { paramInt, paramString ->
         Log.d("HTProtect", "code is:$paramInt String is:$paramString")
-        // paramInt返回200说明初始化成功
-        if (paramInt == 200) {
-          promise.resolve(null)
-        } else {
-          promise.reject(
-            paramInt.toString(),
-            Throwable("[HTProtect]: init failed with code ${paramInt}(${paramString}).")
-          );
-        }
+        val result = Arguments.createMap()
+        result.putInt("code", paramInt)
+        result.putString("message", paramString)
+        promise.resolve(result)
       }
 
       //调用sdk初始化接口init函数
@@ -123,6 +119,17 @@ class HtProtectModule internal constructor(context: ReactApplicationContext) :
       HTProtect.getTokenAsync(timeout.toInt(), businessId, myGetTokenCallback)
     } catch (e: Error) {
       promise.reject("-1", Throwable("[HTProtect]: get token failed."));
+    }
+  }
+
+
+  @ReactMethod
+  override fun ioctl(request: Double, data: String?, promise: Promise) {
+    try {
+      HTProtect.ioctl(request.toInt(), data)
+      promise.resolve(null)
+    } catch (e: Error) {
+      promise.reject("-1", Throwable("[HTProtect]: ioctl failed."));
     }
   }
 

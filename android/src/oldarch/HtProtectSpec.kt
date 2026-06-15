@@ -14,5 +14,5 @@ abstract class HtProtectSpec internal constructor(context: ReactApplicationConte
 
   abstract fun getTokenAsync(businessId: String, timeout: Double, promise: Promise)
 
-
+  abstract fun ioctl(request: Double, data: String?, promise: Promise)
 }

@@ -1,5 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
-import type { TConfig, TRoleInfo } from './NativeHtProtect';
+import type { RequestCmdID, TConfig, TRoleInfo } from './NativeHtProtect';
 
 const LINKING_ERROR =
   `The package 'react-native-ht-protect' doesn't seem to be linked. Make sure: \n\n` +
@@ -25,8 +25,11 @@ const HtProtect = HtProtectModule
       }
     );
 
-export async function init(productId: string, config: TConfig): Promise<void> {
-  await HtProtect.init(productId, config);
+export async function init(
+  productId: string,
+  config: TConfig
+): Promise<{ code: number; message: string }> {
+  return await HtProtect.init(productId, config);
 }
 
 export async function setRoleInfo(
@@ -58,3 +61,12 @@ export async function getTokenAsync(
     return await HtProtect.getTokenAsync(businessId, timeout);
   }
 }
+
+export async function ioctl(
+  request: RequestCmdID,
+  data?: string
+): Promise<void> {
+  await HtProtect.ioctl(request, data ?? '');
+}
+
+export type { TConfig, TRoleInfo, RequestCmdID } from './NativeHtProtect';

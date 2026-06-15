@@ -31,13 +31,8 @@ RCT_EXPORT_METHOD(init:(NSString *)productId
     }
     //调用sdk初始化接口
     [[NTESRiskUniPerception fomentBevelDeadengo] init:productId callback:^(int code, NSString * _Nonnull msg, NSString * _Nonnull content) {
-      // code返回200说明初始化成功
-      if (code == 200) {
-        resolve(nil);
-      } else {
-        NSError *error = [NSError errorWithDomain:@"" code:code  userInfo:nil];
-        reject([@(code) stringValue], [[NSString alloc] initWithFormat:@"[HTProtect]: init failed with code %@(%@).", [@(code) stringValue], msg], error);
-      }
+      NSDictionary *result = @{@"code": @(code), @"message": msg};
+      resolve(result);
     }];
   } catch (NSError *error) {
     reject(@"-1", @"[HTProtect]: init failed.", error);
@@ -93,6 +88,19 @@ RCT_EXPORT_METHOD(getTokenAsync:(NSString *)businessId
     }];
   }catch (NSError *error) {
     reject(@"-1", @"[HTProtect]: get token failed.", error);
+  }
+}
+
+RCT_EXPORT_METHOD(ioctl:(double)request
+                  data:(NSString *)data
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
+{
+  try {
+    [[NTESRiskUniPerception fomentBevelDeadengo] ioctl:(RequestCmdID)request withData:data];
+    resolve(nil);
+  } catch (NSError *error) {
+    reject(@"-1", @"[HTProtect]: ioctl failed.", error);
   }
 }
 
