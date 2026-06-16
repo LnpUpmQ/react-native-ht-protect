@@ -1,5 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
-import type { RequestCmdID, TConfig, TRoleInfo } from './NativeHtProtect';
+import { RequestCmdID, type TConfig, type TRoleInfo } from './NativeHtProtect';
 
 const LINKING_ERROR =
   `The package 'react-native-ht-protect' doesn't seem to be linked. Make sure: \n\n` +
@@ -69,4 +69,5 @@ export async function ioctl(
   await HtProtect.ioctl(request, data ?? '');
 }
 
-export type { TConfig, TRoleInfo, RequestCmdID } from './NativeHtProtect';
+export { RequestCmdID };
+export type { TConfig, TRoleInfo };
